@@ -1,0 +1,36 @@
+h3 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 18pt;
+    color: whitesmoke
+}
+
+h1 {
+    font-size: 30pt;
+    color: rgb(51, 11, 51);
+}
+
+html {
+
+    background: url(https://comicvine1.cbsistatic.com/uploads/original/11131/111319715/6473063-riddler%20v.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+h1,
+h3 {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    background-color: #0b4439;
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    margin: auto;
+    border-style: solid;
+    margin-top: 120px;
+
+}
