@@ -17,6 +17,13 @@ var Guesses_so_far = []
 
 var playerGuess
 
+var Winstext = document.getElementById('wins');
+var Lossestext = document.getElementById('losses');
+var Guesses_left_text = document.getElementById('guesses_left');
+var Guesses_so_fartext = document.getElementById('your_guesses_so_far');
+
+
+
 // this function is when a user inputs a key
 document.onkeyup = function (event) {
     // convert to lower in case user inputs upper case
@@ -25,29 +32,28 @@ document.onkeyup = function (event) {
     Guesses_so_far.push(playerGuess);
     // re-generating computer tries 
     computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-    document.querySelector('#your_guesses_so_far').innerHTML = playerGuess.join(' , ');
 
     // in case a user wins the game
     if (playerGuess === computerGuess) {
-        wins++
-        document.querySelector('#wins').innerHTML = wins
+        wins++;
         // resets all guesses and guesses so far variables
         reset_game()
     }
     if (guesses_left === 0) {
-        losses++
-        document.querySelector('#losses').innerHTML = losses
+        losses++;
         reset_game()
     }
 
-
+    Winstext.textContent = "Wins: " + wins
+    Lossestext.textContent = "Losses: " + losses
+    Guesses_left_text.textContent = "Guesses Left: " + guesses_left
+    Guesses_so_fartext.textContent = "Your Guesses So Far :" + Guesses_so_far
 
 }
 
 var reset_game = function () {
     guesses_left = 9
     Guesses_so_far = []
-    document.querySelector('#guesses_left').innerHTML = guesses_left
-    document.querySelector('#your_guesses_so_far').innerHTML = Guesses_so_far
+
 
 }
